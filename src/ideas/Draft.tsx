@@ -7,10 +7,4 @@ const Draft = () => {
   </div>
 };
 
-// const Draft = () => {
-//   return <div className="wrapper">
-//     <h2>Drafts go here</h2>
-//   </div>
-// };
-
 export default Draft;

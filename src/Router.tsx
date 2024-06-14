@@ -24,13 +24,13 @@ const routes: Route[] = [
   },
   {
     date: "06-09-24",
-    path: "fillScreenTransition",
-    element: <Ideas.FillScreenTransition />,
+    path: "twoBoxes",
+    element: <Ideas.TwoBoxes />,
   },
   {
     date: "06-09-24",
-    path: "twoBoxes",
-    element: <Ideas.TwoBoxes />,
+    path: "fillScreenTransition",
+    element: <Ideas.FillScreenTransition />,
   },
   {
     date: "06-09-24",
@@ -57,10 +57,6 @@ const routes: Route[] = [
     path: "draft",
     element: <Ideas.Draft />,
   },
-  // {
-  //   path: "playButton",
-  //   element: <Ideas.PlayButton />
-  // }
 ];
 
 const router = createBrowserRouter(routes);

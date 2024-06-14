@@ -1,3 +1,86 @@
+import CodeBlockComponent from "@/components/CodeBlockComponent";
+import PrototypeScreen from "@/components/PrototypeScreen";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+
+const SecretMessageButton = () => {
+  const [showSubtitle, setShowSubtitle] = useState<boolean>(false);
+  const [distance, setDistance] = useState<number>(100);
+
+  return (
+    <PrototypeScreen
+      codeBlockComponent={
+        <CodeBlockComponent code={SecretMessageButtonCode} language={"tsx"} />
+      }
+      prototypeComponent={
+        <div className="right-pane">
+          <div
+            onClick={() => setShowSubtitle((ss) => !ss)}
+            style={{
+              width: "200px",
+              height: "40px",
+              backgroundColor: "gray",
+              position: "relative",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
+              cursor: "pointer",
+              color: "white",
+            }}
+          >
+            <AnimatePresence initial={false}>
+              {showSubtitle ? (
+                <motion.p
+                  className="prevent-select"
+                  style={{ position: "absolute" }}
+                  initial={{ top: distance }}
+                  animate={{ top: -4 }}
+                  exit={{ top: distance }}
+                >
+                  Hidden Text
+                </motion.p>
+              ) : null}
+            </AnimatePresence>
+            <AnimatePresence initial={false}>
+              {!showSubtitle ? (
+                <motion.p
+                  className="prevent-select"
+                  style={{ position: "absolute" }}
+                  initial={{ top: -distance }}
+                  animate={{ top: -4 }}
+                  exit={{ top: -distance }}
+                >
+                  Main Text
+                </motion.p>
+              ) : null}
+            </AnimatePresence>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "center",
+              gap: 12,
+            }}
+          >
+            <p className="prevent-select">Distance: {distance}</p>
+            <input
+              type="range"
+              min="40"
+              max="100"
+              value={distance}
+              onChange={(e) => setDistance(parseInt(e.target.value))}
+            />
+          </div>
+        </div>
+      }
+    />
+  );
+};
+
+const SecretMessageButtonCode = `
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -12,42 +95,40 @@ const SecretMessageButton = () => {
         style={{
           width: "200px",
           height: "40px",
-          backgroundColor: "#C9C9C9",
+          backgroundColor: "gray",
+          position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          position: "relative",
           overflow: "hidden",
           cursor: "pointer",
-          borderRadius: "8px",
-          border: "2px solid rgba(0, 0, 0, 0.2)",
           color: "white",
         }}
       >
         <AnimatePresence initial={false}>
           {showSubtitle ? (
-            <motion.h3
+            <motion.p
               className="prevent-select"
               style={{ position: "absolute" }}
               initial={{ top: distance }}
-              animate={{ top: -10 }}
+              animate={{ top: -4 }}
               exit={{ top: distance }}
             >
               Hidden Text
-            </motion.h3>
+            </motion.p>
           ) : null}
         </AnimatePresence>
         <AnimatePresence initial={false}>
           {!showSubtitle ? (
-            <motion.h3
+            <motion.p
               className="prevent-select"
               style={{ position: "absolute" }}
               initial={{ top: -distance }}
-              animate={{ top: -10 }}
+              animate={{ top: -4 }}
               exit={{ top: -distance }}
             >
               Main Text
-            </motion.h3>
+            </motion.p>
           ) : null}
         </AnimatePresence>
       </div>
@@ -72,5 +153,8 @@ const SecretMessageButton = () => {
     </div>
   );
 };
+
+export default SecretMessageButton;
+`;
 
 export default SecretMessageButton;
