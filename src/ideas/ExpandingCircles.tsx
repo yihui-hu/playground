@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
 import CodeBlockComponent from "@/components/CodeBlockComponent";
 import PrototypeScreen from "@/components/PrototypeScreen";
 
 const ExpandingCircles = () => {
-  const [selected, setSelected] = useState<number>(-1);
+  const [selected, setSelected] = useState<number>(0);
 
   return (
     <PrototypeScreen
+      codeBlockString={ExpandingCirclesCode}
       codeBlockComponent={
         <CodeBlockComponent code={ExpandingCirclesCode} language={"tsx"} />
       }
@@ -25,6 +24,7 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
+              transition={{ duration: 0.15 }}
               onClick={() => {
                 setSelected(selected === 0 ? -1 : 0);
               }}
@@ -38,6 +38,7 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
+              transition={{ duration: 0.15 }}
               onClick={() => setSelected(selected === 1 ? -1 : 1)}
             />
             <motion.div
@@ -49,6 +50,7 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
+              transition={{ duration: 0.15 }}
               onClick={() => setSelected(selected === 2 ? -1 : 2)}
             />
             <motion.div
@@ -60,6 +62,7 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
+              transition={{ duration: 0.15 }}
               onClick={() => setSelected(selected === 3 ? -1 : 3)}
             />
           </div>
@@ -74,7 +77,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const ExpandingCircles = () => {
-  const [selected, setSelected] = useState<number>(-1);
+  const [selected, setSelected] = useState<number>(0);
 
   return (
     <div className="wrapper">

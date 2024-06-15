@@ -8,6 +8,7 @@ const TwoBoxes = () => {
 
   return (
     <PrototypeScreen
+      codeBlockString={TwoBoxesCode}
       codeBlockComponent={
         <CodeBlockComponent code={TwoBoxesCode} language={"tsx"} />
       }

@@ -2,14 +2,18 @@ import CodeBlockComponent from "@/components/CodeBlockComponent";
 import PrototypeScreen from "@/components/PrototypeScreen";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 
 const NotesWithVideos = () => {
   const gap = 8;
   const [notes, setNotes] = useState<string>("Your notes go here");
   const [selectedBox, setSelectedBox] = useState<string>("notes");
+  
+  const isDesktop = useMediaQuery("(min-width: 1440px)");
 
   return (
     <PrototypeScreen
+      codeBlockString={NotesWithVideosCode}
       codeBlockComponent={
         <CodeBlockComponent code={NotesWithVideosCode} language={"tsx"} />
       }
@@ -35,7 +39,7 @@ const NotesWithVideos = () => {
                 borderRadius: 10,
                 cursor: "pointer",
                 margin: gap,
-                padding: gap * 2,
+                padding: isDesktop ? gap * 2 : gap,
               }}
               onClick={() => setSelectedBox("notes")}
             >
@@ -112,7 +116,7 @@ const NotesWithVideos = () => {
                   border: "2px solid #EEEEEE",
                   borderRadius: 10,
                   cursor: "pointer",
-                  padding: 16,
+                  padding: isDesktop ? gap * 2 : gap,
                 }}
                 onClick={() => setSelectedBox("notes")}
               >

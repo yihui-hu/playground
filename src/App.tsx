@@ -1,9 +1,8 @@
 import "@/styles/global.css";
 import { Link } from "react-router-dom";
-import { routes } from "@/Router";
+import { navigableRoutes } from "@/Router";
 
 const App = () => {
-  const navigableRoutes = routes.slice(1, routes.length);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", padding: "4px"}}>
@@ -25,7 +24,7 @@ const App = () => {
                 key={route.path}
                 style={{ textDecoration: "none", color: "#C9C9C9" }}
               >
-                {route.date + "／" + route.path}
+                {route.date + route.path}
               </Link>
             );
           })}

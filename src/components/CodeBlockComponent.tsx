@@ -13,7 +13,7 @@ const CodeBlockComponent = (props: CodeBlockProps) => {
     <CodeBlock code={code} language={language} theme={themes.ultramin}>
       <CodeBlock.Code style={{ paddingRight: "1rem" }}>
         <div style={{ display: "table-row" }}>
-          <CodeBlock.LineNumber style={{ display: "table-cell", color: "gray", paddingRight: "1rem", textAlign: "right" }} className="prevent-select" />
+          <CodeBlock.LineNumber style={{ display: "table-cell", color: "#C9C9C9", paddingRight: "1rem", textAlign: "right" }} className="prevent-select" />
           <CodeBlock.LineContent style={{ display: "table-cell" }}>
             <CodeBlock.Token />
           </CodeBlock.LineContent>

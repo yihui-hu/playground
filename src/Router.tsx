@@ -4,10 +4,10 @@ import { createBrowserRouter } from "react-router-dom";
 import * as Ideas from "@/ideas/ideas";
 
 interface Route {
-  date: string
-  path: string
-  element: JSX.Element
-  errorElement?: JSX.Element
+  date: string;
+  path: string;
+  element: JSX.Element;
+  errorElement?: JSX.Element;
 }
 
 const routes: Route[] = [
@@ -19,46 +19,48 @@ const routes: Route[] = [
   },
   {
     date: "06-09-24",
-    path: "scalingBox",
+    path: "/scalingBox",
     element: <Ideas.ScalingBox />,
   },
   {
     date: "06-09-24",
-    path: "twoBoxes",
+    path: "/twoBoxes",
     element: <Ideas.TwoBoxes />,
   },
   {
     date: "06-09-24",
-    path: "fillScreenTransition",
+    path: "/fillScreenTransition",
     element: <Ideas.FillScreenTransition />,
   },
   {
     date: "06-09-24",
-    path: "secretMessageButton",
+    path: "/secretMessageButton",
     element: <Ideas.SecretMessageButton />,
   },
   {
     date: "06-10-24",
-    path: "foundationCareersText",
+    path: "/foundationCareersText",
     element: <Ideas.FoundationCareersText />,
   },
   {
     date: "06-10-24",
-    path: "notesWithVideos",
+    path: "/notesWithVideos",
     element: <Ideas.NotesWithVideos />,
   },
   {
     date: "06-11-24",
-    path: "expandingCircles",
-    element: <Ideas.ExpandingCircles />
+    path: "/expandingCircles",
+    element: <Ideas.ExpandingCircles />,
   },
   {
     date: "XX-XX-XX",
-    path: "draft",
+    path: "/draft",
     element: <Ideas.Draft />,
   },
 ];
 
+const navigableRoutes = routes.slice(1, routes.length);
+
 const router = createBrowserRouter(routes);
 
-export { routes, router };
+export { navigableRoutes, routes, router };

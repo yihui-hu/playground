@@ -8,6 +8,7 @@ const ScalingBox = () => {
 
   return (
     <PrototypeScreen
+      codeBlockString={ScalingBoxCode}
       codeBlockComponent={
         <CodeBlockComponent code={ScalingBoxCode} language={"tsx"} />
       }

@@ -9,6 +9,7 @@ const FoundationCareersText = () => {
 
   return (
     <PrototypeScreen
+      codeBlockString={FoundationCareersTextCode}
       codeBlockComponent={
         <CodeBlockComponent code={FoundationCareersTextCode} language={"tsx"} />
       }

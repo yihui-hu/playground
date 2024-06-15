@@ -8,6 +8,7 @@ const FillScreenTransition = () => {
 
   return (
     <PrototypeScreen
+      codeBlockString={FillScreenTransitionCode}
       codeBlockComponent={
         <CodeBlockComponent code={FillScreenTransitionCode} language={"tsx"} />
       }
@@ -16,23 +17,25 @@ const FillScreenTransition = () => {
           <motion.div
             layout
             onClick={() => setOpen((o) => !o)}
+            className="prevent-select"
             style={
               open
                 ? {
                     position: "fixed",
-                    width: "58%",
+                    width: "100%",
                     height: "100%",
+                    inset: 0,
                     background: "#D9D9D9",
                     borderRadius: 0,
-                    insetInline: "42%",
                     cursor: "pointer",
+                    zIndex: 9,
                   }
                 : {
                     width: 48,
                     height: 48,
                     background: "#D9D9D9",
-                    insetInline: "42%",
                     borderRadius: 24,
+                    inset: 0,
                     cursor: "pointer",
                   }
             }

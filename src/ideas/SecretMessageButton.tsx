@@ -9,6 +9,7 @@ const SecretMessageButton = () => {
 
   return (
     <PrototypeScreen
+      codeBlockString={SecretMessageButtonCode}
       codeBlockComponent={
         <CodeBlockComponent code={SecretMessageButtonCode} language={"tsx"} />
       }
@@ -19,7 +20,7 @@ const SecretMessageButton = () => {
             style={{
               width: "200px",
               height: "40px",
-              backgroundColor: "gray",
+              backgroundColor: "#C9C9C9",
               position: "relative",
               display: "flex",
               justifyContent: "center",
@@ -95,7 +96,7 @@ const SecretMessageButton = () => {
         style={{
           width: "200px",
           height: "40px",
-          backgroundColor: "gray",
+          backgroundColor: "#C9C9C9",
           position: "relative",
           display: "flex",
           justifyContent: "center",
