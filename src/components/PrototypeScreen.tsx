@@ -6,7 +6,7 @@ import {
   ImperativePanelHandle,
 } from "react-resizable-panels";
 import { navigableRoutes } from "@/Router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { useMediaQuery } from "usehooks-ts";
 import ActionTabs from "./ActionTabs";
