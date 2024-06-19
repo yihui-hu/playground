@@ -7,6 +7,7 @@ import NotesWithVideos from "./NotesWithVideos";
 import ExpandingCircles from "./ExpandingCircles";
 import ExpandingPhotos from "./ExpandingPhotos";
 import Timeline from "./Timeline";
+import ContinuousHighlight from "./ContinuousHighlight";
 import Draft from "./Draft";
 
 export {
@@ -19,5 +20,6 @@ export {
   ExpandingCircles,
   ExpandingPhotos,
   Timeline,
+  ContinuousHighlight,
   Draft
 };

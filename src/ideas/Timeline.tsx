@@ -24,7 +24,23 @@ const Timeline = () => {
   const calculateScale = (index: number) => {
     if (hoveredIndex === null) return 0.4;
     const distance = Math.abs(index - hoveredIndex);
+
     return Math.max(1 - distance * 0.2, 0.4);
+  };
+
+  const calculateColor = (index: number) => {
+    if (hoveredIndex === null) return "#D9D9D9";
+    const distance = Math.abs(index - hoveredIndex);
+
+    if (distance === 0) {
+      return "#A9A9A9"
+    } else if (distance === 1) {
+      return "#B9B9B9"
+    } else if (distance === 2) {
+      return "#C9C9C9"
+    } else {
+      return "#D9D9D9"
+    }
   };
 
   return (
@@ -69,7 +85,7 @@ const Timeline = () => {
                     style={{
                       height: 40,
                       width: hoveredIndex === i ? 64 : 4,
-                      backgroundColor: hoveredIndex === i ? "#A9A9A9" : "#B9B9B9",
+                      backgroundColor: calculateColor(i),
                       display: "grid",
                       placeItems: "center",
                       color: "white",

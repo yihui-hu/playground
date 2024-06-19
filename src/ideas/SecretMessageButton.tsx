@@ -28,6 +28,7 @@ const SecretMessageButton = () => {
               overflow: "hidden",
               cursor: "pointer",
               color: "white",
+              borderRadius: 4
             }}
           >
             <AnimatePresence initial={false}>
@@ -104,6 +105,7 @@ const SecretMessageButton = () => {
           overflow: "hidden",
           cursor: "pointer",
           color: "white",
+          borderRadius: 4
         }}
       >
         <AnimatePresence initial={false}>

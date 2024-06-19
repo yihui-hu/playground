@@ -63,6 +63,11 @@ const routes: Route[] = [
     element: <Ideas.Timeline />,
   },
   {
+    date: "06-19-24",
+    path: "/continuousHighlight",
+    element: <Ideas.ContinuousHighlight />,
+  },
+  {
     date: "XX-XX-XX",
     path: "/draft",
     element: <Ideas.Draft />,

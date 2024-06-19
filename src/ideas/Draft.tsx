@@ -1,32 +1,8 @@
 import CodeBlockComponent from "@/components/CodeBlockComponent";
 import PrototypeScreen from "@/components/PrototypeScreen";
 import { motion } from "framer-motion";
-import { useState } from "react";
-
-// Adapted from: https://www.ibelick.com/lab/timeline
 
 const Draft = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const years = Array.from(
-    { length: 2024 - 2000 + 1 },
-    (_, i) => 2024 - i
-  ).reverse();
-
-  const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
-  const calculateScale = (index: number) => {
-    if (hoveredIndex === null) return 0.4;
-    const distance = Math.abs(index - hoveredIndex);
-    return Math.max(1 - distance * 0.2, 0.4);
-  };
-
   return (
     <PrototypeScreen
       codeBlockString="// code goes here"
@@ -34,96 +10,144 @@ const Draft = () => {
         <CodeBlockComponent code={`// code goes here`} language={"tsx"} />
       }
       prototypeComponent={
-        <div className="right-pane">
-          <motion.div
-            layout
+        <div
+          className="right-pane"
+          style={{ overflow: "scroll", width: "100%" }}
+        >
+          <div
             style={{
+              width: "100%",
               display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
+              flexDirection: "column",
+              gap: 12,
+              padding: 12,
             }}
           >
-            {years.map((year, i) => {
-              return (
-                <motion.div
-                  layout
-                  key={year}
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "end",
-                    justifyContent: "center",
-                    placeItems: "center",
-                    paddingInline: 3,
-                    outline: "none",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={() => handleMouseEnter(i)}
-                  onMouseLeave={handleMouseLeave}
-                  onTouchStart={() => handleMouseEnter(i)}
-                  onTouchEnd={handleMouseLeave}
-                >
-                  <motion.div
-                    key={i}
-                    style={{
-                      height: 40,
-                      width: hoveredIndex === i ? 64 : 4,
-                      backgroundColor: "#B9B9B9",
-                      display: "grid",
-                      placeItems: "center",
-                      color: "white",
-                      borderRadius: 4,
-                    }}
-                    animate={{
-                      scale: calculateScale(i),
-                    }}
-                    initial={{ scale: 0.4 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    {hoveredIndex === i ? (
-                      <motion.span
-                        initial={{
-                          opacity: 0,
-                          filter: `blur(4px)`,
-                          scale: 0.4,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          filter: `blur(0px)`,
-                          scale: 1,
-                        }}
-                        transition={{ duration: 0.15, delay: 0.1 }}
-                        style={{ fontSize: 16 }}
-                      >
-                        {year}
-                      </motion.span>
-                    ) : null}
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+            <motion.div
+              style={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#EEEEEE",
+                borderRadius: 8,
+              }}
+              initial={{ opacity: 0, rotate: 4, rotateX: 10, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, rotate: 0, rotateX: 0, y: 0 }}
+            />
+          </div>
         </div>
       }
     />
   );
 };
-
-// const Draft = () => {
-//   return (
-//     <PrototypeScreen
-//       codeBlockString="// code goes here"
-//       codeBlockComponent={
-//         <CodeBlockComponent code={`// code goes here`} language={"tsx"} />
-//       }
-//       prototypeComponent={
-//         <div className="right-pane">
-//           <span>Prototype goes here</span>
-//         </div>
-//       }
-//     />
-//   );
-// };
 
 export default Draft;
