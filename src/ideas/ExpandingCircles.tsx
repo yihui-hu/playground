@@ -24,7 +24,11 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
-              transition={{ duration: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
               onClick={() => {
                 setSelected(selected === 0 ? -1 : 0);
               }}
@@ -38,7 +42,11 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
-              transition={{ duration: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
               onClick={() => setSelected(selected === 1 ? -1 : 1)}
             />
             <motion.div
@@ -50,7 +58,11 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
-              transition={{ duration: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
               onClick={() => setSelected(selected === 2 ? -1 : 2)}
             />
             <motion.div
@@ -62,7 +74,11 @@ const ExpandingCircles = () => {
                 borderRadius: 40,
                 cursor: "pointer",
               }}
-              transition={{ duration: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
               onClick={() => setSelected(selected === 3 ? -1 : 3)}
             />
           </div>
@@ -97,6 +113,11 @@ const ExpandingCircles = () => {
             borderRadius: 40,
             cursor: "pointer",
           }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+          }}
           onClick={() => {
             setSelected(selected === 0 ? -1 : 0);
           }}
@@ -110,6 +131,11 @@ const ExpandingCircles = () => {
             borderRadius: 40,
             cursor: "pointer",
           }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+          }}
           onClick={() => setSelected(selected === 1 ? -1 : 1)}
         />
         <motion.div
@@ -121,6 +147,11 @@ const ExpandingCircles = () => {
             borderRadius: 40,
             cursor: "pointer",
           }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+          }}
           onClick={() => setSelected(selected === 2 ? -1 : 2)}
         />
         <motion.div
@@ -131,6 +162,11 @@ const ExpandingCircles = () => {
             backgroundColor: "#C9C9C9",
             borderRadius: 40,
             cursor: "pointer",
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
           }}
           onClick={() => setSelected(selected === 3 ? -1 : 3)}
         />

@@ -64,6 +64,12 @@ label {
   line-height: 1.1;
 }
 
+button {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 /* Balance text wrapping on headings */
 h1,
 h2,

@@ -5,6 +5,8 @@ import SecretMessageButton from "./SecretMessageButton";
 import FoundationCareersText from "./FoundationCareers";
 import NotesWithVideos from "./NotesWithVideos";
 import ExpandingCircles from "./ExpandingCircles";
+import ExpandingPhotos from "./ExpandingPhotos";
+import Timeline from "./Timeline";
 import Draft from "./Draft";
 
 export {
@@ -15,5 +17,7 @@ export {
   FoundationCareersText,
   NotesWithVideos,
   ExpandingCircles,
+  ExpandingPhotos,
+  Timeline,
   Draft
 };

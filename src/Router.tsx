@@ -53,6 +53,16 @@ const routes: Route[] = [
     element: <Ideas.ExpandingCircles />,
   },
   {
+    date: "06-17-24",
+    path: "/expandingPhotos",
+    element: <Ideas.ExpandingPhotos />,
+  },
+  {
+    date: "06-18-24",
+    path: "/timeline",
+    element: <Ideas.Timeline />,
+  },
+  {
     date: "XX-XX-XX",
     path: "/draft",
     element: <Ideas.Draft />,
